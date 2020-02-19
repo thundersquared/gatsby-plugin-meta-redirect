@@ -1,8 +1,11 @@
 {
-  "name": "gatsby-plugin-htaccess-redirect",
+  "name": "@thundersquared/gatsby-plugin-htaccess-redirect",
   "version": "1.0.0",
-  "repository": "git@github.com:getchalk/gatsby-plugin-htaccess-redirect.git",
-  "author": "Danny Wilson <dwilson@getchalk.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/thundersquared/gatsby-plugin-htaccess-redirect.git"
+  },
+  "author": "Anatoli Nicolae <git@anatolinicolae.com>",
   "license": "MIT",
   "main": "index.js",
   "engines": {
@@ -25,5 +28,13 @@
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/"
+  },
+  "description": "[![Travis][build-badge]][build] [![npm package][npm-badge]][npm]",
+  "bugs": {
+    "url": "https://github.com/thundersquared/gatsby-plugin-htaccess-redirect/issues"
+  },
+  "homepage": "https://github.com/thundersquared/gatsby-plugin-htaccess-redirect#readme",
+  "directories": {
+    "test": "tests"
   }
 }

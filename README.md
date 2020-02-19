@@ -53,7 +53,7 @@ and
 <meta http-equiv="refresh" content="0; URL='/zn-CH/url/'" />
 ```
 
-[build-badge]: https://img.shields.io/travis/getchalk/gatsby-plugin-htaccess-redirect/master.png?style=flat-square
-[build]: https://travis-ci.org/getchalk/gatsby-plugin-htaccess-redirect
+[build-badge]: https://img.shields.io/travis/thundersquared/gatsby-plugin-htaccess-redirect/master.png?style=flat-square
+[build]: https://travis-ci.org/thundersquared/gatsby-plugin-htaccess-redirect
 [npm-badge]: https://img.shields.io/npm/v/gatsby-plugin-htaccess-redirect.png?style=flat-square
 [npm]: https://www.npmjs.org/package/gatsby-plugin-htaccess-redirect
