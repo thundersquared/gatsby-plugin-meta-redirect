@@ -1,4 +1,4 @@
-const getMetaRedirect = require('../getMetaRedirect');
+const getMetaRedirect = require('../getRewriteRule');
 
 describe('getMetaRedirect', () => {
   it('wraps path in forward slashes', () => {

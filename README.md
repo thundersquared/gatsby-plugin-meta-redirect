@@ -1,7 +1,7 @@
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
+[![Build Status](https://travis-ci.com/thundersquared/gatsby-plugin-htaccess-redirect.svg?branch=master)](https://travis-ci.com/thundersquared/gatsby-plugin-htaccess-redirect)
+![npm (scoped)](https://img.shields.io/npm/v/@thundersquared/gatsby-plugin-htaccess-redirect?style=flat-square)
 
-# gatsby-plugin-htaccess-redirect
+# @thundersquared/gatsby-plugin-htaccess-redirect
 
 Generates meta redirect html files for redirecting on any static file host.
 

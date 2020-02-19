@@ -1,6 +1,6 @@
 {
   "name": "@thundersquared/gatsby-plugin-htaccess-redirect",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thundersquared/gatsby-plugin-htaccess-redirect.git"
@@ -29,7 +29,7 @@
     "verbose": true,
     "testURL": "http://localhost/"
   },
-  "description": "[![Travis][build-badge]][build] [![npm package][npm-badge]][npm]",
+  "description": "Creates an .htaccess based on your defined redirect rules.",
   "bugs": {
     "url": "https://github.com/thundersquared/gatsby-plugin-htaccess-redirect/issues"
   },
