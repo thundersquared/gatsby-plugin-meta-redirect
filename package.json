@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/thundersquared/gatsby-plugin-htaccess-redirect.git"
+    "url": "git+https://github.com/thundersquared/gatsby-plugin-htaccess-redirect.git"
   },
   "author": "Anatoli Nicolae <git@anatolinicolae.com>",
   "license": "MIT",
