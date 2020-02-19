@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/thundersquared/gatsby-plugin-htaccess-redirect.svg?branch=master)](https://travis-ci.com/thundersquared/gatsby-plugin-htaccess-redirect)
-![npm (scoped)](https://img.shields.io/npm/v/@thundersquared/gatsby-plugin-htaccess-redirect?style=flat-square)
+![Travis](https://img.shields.io/travis/thundersquared/gatsby-plugin-htaccess-redirect?style=flat-square)
+![npm](https://img.shields.io/npm/v/@thundersquared/gatsby-plugin-htaccess-redirect?style=flat-square)
 
 # @thundersquared/gatsby-plugin-htaccess-redirect
 

@@ -20,7 +20,7 @@ const getRewriteRule = (fromPath, toPath, pathPrefix) => {
             url = `/${url}`;
         }
 
-        if (pathPrefix.length > 0) {
+        if (pathPrefix && pathPrefix.length > 0) {
             url = `${pathPrefix}${url}`;
         }
 
@@ -85,7 +85,7 @@ async function writeHtaccessFile(redirects, folder, pathPrefix) {
  * @param store Current site state and settings
  * @returns {Promise<void>}
  */
-exports.onPostBuild = ({store}) => {
+const onPostBuild = ({store}) => {
     const {redirects, program, config} = store.getState();
 
     let pathPrefix = ``;
@@ -97,4 +97,9 @@ exports.onPostBuild = ({store}) => {
     const folder = path.join(program.directory, `public`);
 
     return writeHtaccessFile(redirects, folder, pathPrefix);
+};
+
+module.exports = {
+    getRewriteRule,
+    onPostBuild,
 };
