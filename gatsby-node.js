@@ -28,7 +28,7 @@ const getRewriteRule = (fromPath, toPath, pathPrefix) => {
         const fromResemblesFile = fromPath.includes('.');
 
         if (!fromResemblesFile) {
-            fromPath = `${fromPath}/`.replace(/\/\/+/g, '/');
+            fromPath = `${fromPath}/?`.replace(/\/\/+/g, '/');
         }
     }
 
