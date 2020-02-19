@@ -9,29 +9,51 @@ const {exists, writeFile, ensureDir} = require('fs-extra');
  * @returns {string} Wrapped and final RewriteRule
  */
 const getRewriteRule = (fromPath, toPath, pathPrefix) => {
-    let url = toPath.trim();
+    fromPath = fromPath.trim();
+    const fromHasProtocol = fromPath.includes(`://`);
 
-    const hasProtocol = url.includes(`://`);
+    if (!fromHasProtocol) {
+        const fromHasLeadingSlash = fromPath.startsWith(`/`);
 
-    if (!hasProtocol) {
-        const hasLeadingSlash = url.startsWith(`/`);
-
-        if (!hasLeadingSlash) {
-            url = `/${url}`;
+        if (fromHasLeadingSlash) {
+            const fromIsOkForHtaccess = fromPath.startsWith(`/?`);
+            if (!fromIsOkForHtaccess) {
+                // Repalce URL with correct start followd by substring after /
+                fromPath = `/?${fromPath.substring(1)}`;
+            }
+        } else {
+            fromPath = `/?${fromPath}`;
         }
 
-        if (pathPrefix && pathPrefix.length > 0) {
-            url = `${pathPrefix}${url}`;
-        }
+        const fromResemblesFile = fromPath.includes('.');
 
-        const resemblesFile = url.includes('.');
-
-        if (!resemblesFile) {
-            url = `${url}/`.replace(/\/\/+/g, '/');
+        if (!fromResemblesFile) {
+            fromPath = `${fromPath}/`.replace(/\/\/+/g, '/');
         }
     }
 
-    return `RewriteRule ^/?${fromPath}/?$ ${url} [R=301,L]`;
+    toPath = toPath.trim();
+    const toHasProtocol = toPath.includes(`://`);
+
+    if (!toHasProtocol) {
+        const toHasLeadingSlash = toPath.startsWith(`/`);
+
+        if (!toHasLeadingSlash) {
+            toPath = `/${toPath}`;
+        }
+
+        if (pathPrefix && pathPrefix.length > 0) {
+            toPath = `${pathPrefix}${toPath}`;
+        }
+
+        const toResemblesFile = toPath.includes('.');
+
+        if (!toResemblesFile) {
+            toPath = `${toPath}/`.replace(/\/\/+/g, '/');
+        }
+    }
+
+    return `RewriteRule ^${fromPath}$ ${toPath} [R=301,L]`;
 };
 
 /**

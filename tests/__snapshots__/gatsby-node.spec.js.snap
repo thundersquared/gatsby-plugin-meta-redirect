@@ -1,53 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getRewriteRule allows existing leading and trailing forward slashes 1`] = `"RewriteRule ^/?/?$ /toPath/ [R=301,L]"`;
+exports[`getRewriteRule allows existing leading and trailing forward slashes 1`] = `"RewriteRule ^/?/$ /toPath/ [R=301,L]"`;
 
-exports[`getRewriteRule handles deep paths 1`] = `"RewriteRule ^/?/?$ /a/b/c/d/ [R=301,L]"`;
+exports[`getRewriteRule handles deep paths 1`] = `"RewriteRule ^/?/$ /a/b/c/d/ [R=301,L]"`;
 
-exports[`getRewriteRule handles offset wrapping forward slashes 1`] = `"RewriteRule ^/?/?$ /a/b/c/ [R=301,L]"`;
+exports[`getRewriteRule handles offset wrapping forward slashes 1`] = `"RewriteRule ^/?/$ /a/b/c/ [R=301,L]"`;
 
-exports[`getRewriteRule handles redirecting to a file 1`] = `"RewriteRule ^/?/?$ /test.txt [R=301,L]"`;
+exports[`getRewriteRule handles redirecting to a file 1`] = `"RewriteRule ^/?/$ /test.txt [R=301,L]"`;
 
-exports[`getRewriteRule handles redirecting to a file in a folder 1`] = `"RewriteRule ^/?/?$ /a/b/test.txt [R=301,L]"`;
+exports[`getRewriteRule handles redirecting to a file in a folder 1`] = `"RewriteRule ^/?/$ /a/b/test.txt [R=301,L]"`;
 
-exports[`getRewriteRule handles redirecting to root 1`] = `"RewriteRule ^/?/?$ / [R=301,L]"`;
+exports[`getRewriteRule handles redirecting to root 1`] = `"RewriteRule ^/?/$ / [R=301,L]"`;
 
-exports[`getRewriteRule leaves full urls untouched 1`] = `"RewriteRule ^/?/?$ http://example.com [R=301,L]"`;
+exports[`getRewriteRule leaves full urls untouched 1`] = `"RewriteRule ^/?/$ http://example.com [R=301,L]"`;
 
-exports[`getRewriteRule leaves full urls untouched 2`] = `"RewriteRule ^/?/?$ http://example.com/ [R=301,L]"`;
+exports[`getRewriteRule leaves full urls untouched 2`] = `"RewriteRule ^/?/$ http://example.com/ [R=301,L]"`;
 
-exports[`getRewriteRule leaves full urls untouched 3`] = `"RewriteRule ^/?/?$ http://example.com/a/b/c [R=301,L]"`;
+exports[`getRewriteRule leaves full urls untouched 3`] = `"RewriteRule ^/?/$ http://example.com/a/b/c [R=301,L]"`;
 
-exports[`getRewriteRule replaces duplicate slashes with single slash 1`] = `"RewriteRule ^/?/?$ /topath/a/ [R=301,L]"`;
+exports[`getRewriteRule replaces duplicate slashes with single slash 1`] = `"RewriteRule ^/?/$ /topath/a/ [R=301,L]"`;
 
-exports[`getRewriteRule trims leading and trailing whitespace 1`] = `"RewriteRule ^/?/?$ /toPath/ [R=301,L]"`;
+exports[`getRewriteRule trims leading and trailing whitespace 1`] = `"RewriteRule ^/?/$ /toPath/ [R=301,L]"`;
 
-exports[`getRewriteRule wraps path in forward slashes 1`] = `"RewriteRule ^/?/?$ /toPath/ [R=301,L]"`;
+exports[`getRewriteRule wraps path in forward slashes 1`] = `"RewriteRule ^/?/$ /toPath/ [R=301,L]"`;
 
 exports[`onPostBuild handles external redirects 1`] = `
 "<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^/?/a/b/?$ http://example.com/ [R=301,L]
+RewriteRule ^/?a/b/$ http://example.com/ [R=301,L]
 </IfModule>"
 `;
 
 exports[`onPostBuild writes deep path redirects 1`] = `
 "<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^/?/a/b/c/d/?$ /x/y/z/ [R=301,L]
+RewriteRule ^/?a/b/c/d/$ /x/y/z/ [R=301,L]
 </IfModule>"
 `;
 
 exports[`onPostBuild writes redirects from root 1`] = `
 "<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^/?//?$ /hello/ [R=301,L]
+RewriteRule ^/?/$ /hello/ [R=301,L]
 </IfModule>"
 `;
 
 exports[`onPostBuild writes redirects to root 1`] = `
 "<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^/?/hello/?$ / [R=301,L]
+RewriteRule ^/?hello/$ / [R=301,L]
 </IfModule>"
 `;
