@@ -6,26 +6,33 @@ const getMetaRedirect = require('./getMetaRedirect');
 async function writeRedirectsFile(redirects, folder, pathPrefix) {
   if (!redirects.length) return;
 
+  let outputLines = [];
+
+  outputLines.push(`<IfModule mod_rewrite.c>`);
+  outputLines.push(`RewriteEngine On`);
+
   for (const redirect of redirects) {
     const { fromPath, toPath } = redirect;
+    console.log(fromPath, toPath);
+    outputLines.push(getMetaRedirect(fromPath, toPath));
+  }
 
-    const FILE_PATH = path.join(
-      folder,
-      fromPath.replace(pathPrefix, ''),
-      'index.html'
-    );
+  outputLines.push(`</IfModule>`);
 
-    const fileExists = await exists(FILE_PATH);
-    if (!fileExists) {
-      try {
-        await ensureDir(path.dirname(FILE_PATH));
-      } catch (err) {
-        // ignore if the directory already exists;
-      }
+  const FILE_PATH = path.join(
+    folder,
+    '.htaccess'
+  );
 
-      const data = getMetaRedirect(toPath);
-      await writeFile(FILE_PATH, data);
+  const fileExists = await exists(FILE_PATH);
+  if (!fileExists) {
+    try {
+      await ensureDir(path.dirname(FILE_PATH));
+    } catch (err) {
+      // ignore if the directory already exists;
     }
+
+    await writeFile(FILE_PATH, outputLines.join("\n"));
   }
 }
 

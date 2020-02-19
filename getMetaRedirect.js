@@ -1,4 +1,4 @@
-module.exports = function getMetaRedirect(toPath) {
+module.exports = function getMetaRedirect(fromPath, toPath) {
   let url = toPath.trim();
 
   const hasProtocol = url.includes('://');
@@ -14,5 +14,5 @@ module.exports = function getMetaRedirect(toPath) {
     }
   }
 
-  return `<meta http-equiv="refresh" content="0; URL='${url}'" />`;
+  return `RewriteRule ^${fromPath}/?$ ${url} [R=301,L]`;
 };

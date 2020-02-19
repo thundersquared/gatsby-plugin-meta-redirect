@@ -1,20 +1,20 @@
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
 
-# gatsby-plugin-meta-redirect
+# gatsby-plugin-htaccess-redirect
 
 Generates meta redirect html files for redirecting on any static file host.
 
 ## Install
 
 ```sh
-npm install --save gatsby-plugin-meta-redirect
+npm install --save gatsby-plugin-htaccess-redirect
 ```
 
 or
 
 ```sh
-yarn add gatsby-plugin-meta-redirect
+yarn add gatsby-plugin-htaccess-redirect
 ```
 
 ## How to use
@@ -22,7 +22,7 @@ yarn add gatsby-plugin-meta-redirect
 ```js
 // In your gatsby-config.js
 plugins: [
-  `gatsby-plugin-meta-redirect` // make sure to put last in the array
+  `gatsby-plugin-htaccess-redirect` // make sure to put last in the array
 ];
 ```
 
@@ -53,7 +53,7 @@ and
 <meta http-equiv="refresh" content="0; URL='/zn-CH/url/'" />
 ```
 
-[build-badge]: https://img.shields.io/travis/getchalk/gatsby-plugin-meta-redirect/master.png?style=flat-square
-[build]: https://travis-ci.org/getchalk/gatsby-plugin-meta-redirect
-[npm-badge]: https://img.shields.io/npm/v/gatsby-plugin-meta-redirect.png?style=flat-square
-[npm]: https://www.npmjs.org/package/gatsby-plugin-meta-redirect
+[build-badge]: https://img.shields.io/travis/getchalk/gatsby-plugin-htaccess-redirect/master.png?style=flat-square
+[build]: https://travis-ci.org/getchalk/gatsby-plugin-htaccess-redirect
+[npm-badge]: https://img.shields.io/npm/v/gatsby-plugin-htaccess-redirect.png?style=flat-square
+[npm]: https://www.npmjs.org/package/gatsby-plugin-htaccess-redirect

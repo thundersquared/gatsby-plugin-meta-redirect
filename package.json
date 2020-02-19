@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-plugin-meta-redirect",
-  "version": "1.1.1",
-  "repository": "git@github.com:getchalk/gatsby-plugin-meta-redirect.git",
+  "name": "gatsby-plugin-htaccess-redirect",
+  "version": "1.0.0",
+  "repository": "git@github.com:getchalk/gatsby-plugin-htaccess-redirect.git",
   "author": "Danny Wilson <dwilson@getchalk.com>",
   "license": "MIT",
   "main": "index.js",
