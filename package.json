@@ -20,7 +20,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "fs-extra": "^7.0.0"
+    "fs-extra": "^8.0.0"
   },
   "devDependencies": {
     "jest": "^25.1"
